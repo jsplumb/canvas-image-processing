@@ -1,0 +1,34 @@
+{
+  "name": "@jsplumb/canvas-image-processing",
+  "version": "1.0.0",
+  "description": "A set of helper functions to assist with image processing in HTML canvas",
+  "main": "index.js",
+  "scripts": {
+    "compile": "npx tsc",
+    "build-es6": "./node_modules/.bin/esbuild ./src/*.ts --target=es2016 --outdir=dist/es6",
+    "build-iife": "./node_modules/.bin/esbuild ./src/index.ts --target=es2016 --bundle --format=iife --outfile=dist/js/jsplumb.canvas-image-processing.iife.js",
+    "types": "npx tsc --emitDeclarationOnly --outDir dist/types",
+    "stage": "set -e; node ./scripts/clean.js; npm run compile;npm run build-es6;npm run build-iife; npm run types; node ./scripts/stage.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsplumb/canvas-image-processing.git"
+  },
+  "keywords": [
+    "canvas",
+    "filter",
+    "transformation",
+    "image",
+    "processing"
+  ],
+  "author": "jsPlumb <hello@jsplumbtoolkit.com> (https://jsplumbtoolkit.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsplumb/canvas-image-processing/issues"
+  },
+  "homepage": "https://github.com/jsplumb/canvas-image-processing#readme",
+  "devDependencies": {
+    "esbuild": "^0.19.5",
+    "typescript": "^5.0.0"
+  }
+}

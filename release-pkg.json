@@ -1,0 +1,15 @@
+{
+  "name": "@jsplumb/canvas-image-processing",
+  "version": "",
+  "license": "MIT",
+  "main": "js/jsplumb.canvas-image-processing.iife.js",
+  "module": "es6/index.js",
+  "description": "jsPlumb Canvas Image Processing",
+  "files": [
+    "js/jsplumb.canvas-image-processing.iife.js",
+    "types/*.d.ts",
+    "es6/*"
+  ],
+  "sideEffects": false,
+  "types": "types/index.d.ts"
+}
