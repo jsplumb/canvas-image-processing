@@ -4,9 +4,14 @@ This project is a set of methods to assist with image processing in HTML canvas,
 
 This library is designed to work in browsers, and currently only on the main thread (ie. not in WebWorkers), but when we get a moment we'll release a v2 of this that can be used inside a WebWorker.
  
-The library offers a range of filtering and transform functions, as well as a set of methods for getting images into and out of a canvas.  In this page I've just dumped the typescript definition files - for a full discussion of the capabilities of the library, have a look at 
+The library offers a range of filtering and transform functions, as well as a set of methods for getting images into and out of a canvas.  In this page I've just dumped the typescript definition files - for a full discussion of the capabilities of the library, have a look at [this post on our blog](https://jsplumbtoolkit.com/blog/2023/11/19/image-processing-with-canvas).
 
---- 
+## Installation
+
+```bash
+npm i @jsplumb/cavas-image-processing
+```
+ 
 
 ## Filters
 
