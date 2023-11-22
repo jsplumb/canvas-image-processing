@@ -31,17 +31,23 @@ export function canvasToImage(canvas, type, quality) {
     });
   });
 }
-export function setCanvasImageFromDataURL(canvas, dataURL) {
+export function setCanvasImageFromURL(canvas, url, width, height) {
   return new Promise(function(resolve, reject) {
     const img = new Image();
     img.onload = function() {
       const ctx = canvas.getContext(TWO_D);
       ctx.save();
-      ctx.drawImage(img, 0, 0);
+      if (width != null && height != null) {
+        canvas.width = width;
+        canvas.height = height;
+        setCanvasImageFromImage(canvas, width, height, img);
+      } else {
+        ctx.drawImage(img, 0, 0);
+      }
       ctx.restore();
       resolve(true);
     };
-    img.src = dataURL;
+    img.src = url;
   });
 }
 export function setCanvasImageFromImage(canvas, width, height, img, bgFill) {

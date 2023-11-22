@@ -28,21 +28,30 @@ export async function canvasToImage(canvas:HTMLCanvasElement, type?:string, qual
 /**
  * Sets the contents of a canvas element to the image represented by the given data URL.
  * @param canvas Canvas to draw into
- * @param dataURL Data URL to load.
+ * @param url  URL to load. Maybe a data URL or an http[s]:// url.
  * @return a Promise that resolves to `true` once the image has been drawn into the canvas.
  */
-export function setCanvasImageFromDataURL(canvas:HTMLCanvasElement, dataURL:string):Promise<boolean> {
+export function setCanvasImageFromURL(canvas:HTMLCanvasElement, url:string, width?:number, height?:number):Promise<boolean> {
 
     return new Promise(function(resolve, reject) {
         const img = new Image()
         img.onload = function() {
+
             const ctx = canvas.getContext(TWO_D)
             ctx.save()
-            ctx.drawImage(img, 0, 0)
+
+            if (width != null && height != null) {
+                canvas.width = width
+                canvas.height = height
+                setCanvasImageFromImage(canvas, width, height, img)
+            } else {
+                ctx.drawImage(img, 0, 0)
+            }
+
             ctx.restore()
             resolve(true)
         }
-        img.src = dataURL
+        img.src = url
     })
 }
 

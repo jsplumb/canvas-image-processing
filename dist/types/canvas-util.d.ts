@@ -8,10 +8,10 @@ export declare function canvasToImage(canvas: HTMLCanvasElement, type?: string, 
 /**
  * Sets the contents of a canvas element to the image represented by the given data URL.
  * @param canvas Canvas to draw into
- * @param dataURL Data URL to load.
+ * @param url  URL to load. Maybe a data URL or an http[s]:// url.
  * @return a Promise that resolves to `true` once the image has been drawn into the canvas.
  */
-export declare function setCanvasImageFromDataURL(canvas: HTMLCanvasElement, dataURL: string): Promise<boolean>;
+export declare function setCanvasImageFromURL(canvas: HTMLCanvasElement, url: string, width?: number, height?: number): Promise<boolean>;
 /**
  * Sets an image on a given canvas, setting the width/height of the canvas and scaling the image to fit. You do not need
  * to use this method if you don't wish to scale the canvas. You can just use the canvas's `drawImage` method instead.

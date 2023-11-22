@@ -1,6 +1,6 @@
 {
   "name": "@jsplumb/canvas-image-processing",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A set of helper functions to assist with image processing in HTML canvas",
   "main": "index.js",
   "scripts": {

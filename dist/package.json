@@ -1,6 +1,6 @@
 {
     "name": "@jsplumb/canvas-image-processing",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "main": "js/jsplumb.canvas-image-processing.iife.js",
     "module": "es6/index.js",
